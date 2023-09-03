@@ -5,7 +5,7 @@ Projeto Desenvolvido para teste técnico para vaga de Estágiário de Desenvolvi
 ### Instruções.
 
 Clone o repositório do projeto:
--  git clone https://github.com/seu-usuario/mini-blog-teste-tecnico.git
+-  git clone [https://github.com/seu-usuario/mini-blog-teste-tecnico.git](https://github.com/AndreLHPsilva/mini-blog-teste-tecnico.git)
 -  cd mini-blog-teste-tecnico
 
 -  Backend:
