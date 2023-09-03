@@ -13,7 +13,7 @@ Clone o repositório do projeto:
     -  cd backend
     -  Crie um arquivo .env com base no arquivo .env-example e configure as variáveis de ambiente necessárias. Você pode usar qualquer editor de texto para fazer isso.
       
-    Execute os seguintes comandos para configurar o backend:
+  -  Execute os seguintes comandos para configurar o backend:
       Instale as dependências:
         -  npm install
       Execute as migrações do Prisma para criar o banco de dados:
