@@ -8,21 +8,22 @@ Clone o repositório do projeto:
 -  git clone https://github.com/AndreLHPsilva/mini-blog-teste-tecnico.git
 -  cd mini-blog-teste-tecnico
 
+Execute os seguintes comandos para configurar o backend.
 -  Backend:
-  Entre na pasta do backend:
+  -  Entre na pasta do backend.
+    
     -  cd backend
     -  Crie um arquivo .env com base no arquivo .env-example e configure as variáveis de ambiente necessárias. Você pode usar qualquer editor de texto para fazer isso.
-      
-  -  Execute os seguintes comandos para configurar o backend:
-      Instale as dependências:
-        -  npm install
-      Execute as migrações do Prisma para criar o banco de dados:
-        -  npx prisma migrate deploy
-      Gere os tipos do Prisma:
-        -  npx prisma generate
-      Inicie o servidor do backend:
-        -  npm run dev
-
+    
+    Instale as dependências:
+      -  npm install
+    Execute as migrações do Prisma para criar o banco de dados:
+      -  npx prisma migrate deploy
+    Gere os tipos do Prisma:
+      -  npx prisma generate
+    Inicie o servidor do backend:
+      -  npm run dev
+    
 -  Frontend:
   
   Abra uma nova janela do terminal ou vá para o diretório raiz do projeto se você saiu da pasta "backend".
