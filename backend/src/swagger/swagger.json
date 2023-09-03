@@ -1,0 +1,11 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API para o teste",
+    "description": "Essa é minha API para o teste",
+    "version": "1.0.0",
+    "contact": {
+      "email": "andreluiiz_@outlook.com"
+    }
+  }
+}
