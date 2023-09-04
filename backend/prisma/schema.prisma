@@ -18,14 +18,14 @@ model User {
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt()
 
-  likes         LikesArticles[]
+  likes         LikeArticle[]
   comments      Comments[]
   LikesComments LikesComments[]
 
-  @@map("user")
+  @@map("users")
 }
 
-model LikesArticles {
+model LikeArticle {
   id         String   @id @default(uuid())
   user_id    String
   user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
