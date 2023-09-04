@@ -84,6 +84,12 @@ Execute os seguintes comandos para configurar o backend.
 ### Diagrama de Entidade-Relacionamento
 ![diagrama](https://github.com/AndreLHPsilva/mini-blog-teste-tecnico/assets/112219645/8f177ecd-4c27-416e-8546-9972ab550d6c)
 
+### Imagens do Projeto
+![cadastro](https://github.com/AndreLHPsilva/mini-blog-teste-tecnico/assets/112219645/075f9534-619c-4b8f-bf07-c732f6bf2723)
+![comment](https://github.com/AndreLHPsilva/mini-blog-teste-tecnico/assets/112219645/f51488cd-ce28-40a0-aa00-4c7dfbcf28f1)
+![Login](https://github.com/AndreLHPsilva/mini-blog-teste-tecnico/assets/112219645/89741ecf-490d-49f9-be13-15469066897f)
+
+
 
 ### Detalhes dos Requisitos para avaliação
 - A aplicação deverá ser desenvolvida em Next.js.
