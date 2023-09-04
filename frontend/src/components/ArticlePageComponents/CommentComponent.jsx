@@ -123,11 +123,50 @@ export default function CommentComponent({ comment }) {
       />
 
       <section className="md:max-w-2xl lg:w-full grid sm:grid-cols-4 grid-cols-1 sm:gap-0 gap-5 odd:bg-zinc-100 rounded-md px-3 py-7">
-        <div className="flex flex-col sm:col-span-3">
-          <span className="text-gray-500 sm:text-base text-xs sm:font-normal font-bold">
-            {comment?.user.name}
-          </span>
-          <p className="pl-4 out">{comment?.content}</p>
+        <div className="flex sm:col-span-3 gap-3">
+          <div className="relative">
+            {showIconMenuComment && (
+              <>
+                <Icon
+                  icon="pepicons-pop:dots-y"
+                  className="cursor-pointer hover:scale-110 transition-all duration-300"
+                  width={20}
+                  onClick={() => setShowMenuComment(!showMenuComment)}
+                />
+                {showMenuComment && (
+                  <nav
+                    className="absolute z-50 -right-20 top-0 flex flex-col bg-white px-4 py-3 rounded border shadow"
+                    ref={menuCommentRef}
+                  >
+                    <span
+                      className="cursor-pointer hover:scale-90 transition-all duration-300"
+                      onClick={() => {
+                        setShowModalEdit(true);
+                        setShowMenuComment(false);
+                      }}
+                    >
+                      Editar
+                    </span>
+                    <span
+                      className="cursor-pointer hover:scale-90 transition-all duration-300"
+                      onClick={() => {
+                        setShowConfirmDeletion(true);
+                        setShowMenuComment(false);
+                      }}
+                    >
+                      Excluir
+                    </span>
+                  </nav>
+                )}
+              </>
+            )}
+          </div>
+          <div className="flex flex-col">
+            <span className="text-gray-500 sm:text-base text-xs sm:font-normal font-bold">
+              {comment?.user.name}
+            </span>
+            <p className="pl-4 out">{comment?.content}</p>
+          </div>
         </div>
 
         <div className="flex sm:justify-end">
@@ -143,43 +182,6 @@ export default function CommentComponent({ comment }) {
                 <span className="sm:text-base text-[10px] sm:font-normal font-bold">
                   {publishedDate}
                 </span>
-              </div>
-              <div className="relative">
-                {showIconMenuComment && (
-                  <>
-                    <Icon
-                      icon="pepicons-pop:dots-y"
-                      className="cursor-pointer hover:scale-110 transition-all duration-300"
-                      width={20}
-                      onClick={() => setShowMenuComment(!showMenuComment)}
-                    />
-                    {showMenuComment && (
-                      <nav
-                        className="absolute z-50 right-5 top-0 flex flex-col bg-white px-4 py-3 rounded border shadow"
-                        ref={menuCommentRef}
-                      >
-                        <span
-                          className="cursor-pointer hover:scale-90 transition-all duration-300"
-                          onClick={() => {
-                            setShowModalEdit(true);
-                            setShowMenuComment(false);
-                          }}
-                        >
-                          Editar
-                        </span>
-                        <span
-                          className="cursor-pointer hover:scale-90 transition-all duration-300"
-                          onClick={() => {
-                            setShowConfirmDeletion(true);
-                            setShowMenuComment(false);
-                          }}
-                        >
-                          Excluir
-                        </span>
-                      </nav>
-                    )}
-                  </>
-                )}
               </div>
             </span>
             <div className="flex items-center gap-2">

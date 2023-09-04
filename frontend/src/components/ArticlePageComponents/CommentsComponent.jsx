@@ -42,7 +42,7 @@ export default function CommentsComponent({ comments, articleId }) {
       {showFormCreateComment && <FormCreateComment articleId={articleId} />}
 
       <div className="divide-y w-full flex flex-col justify-center items-center">
-        <div className="max-h-96 md:max-w-2xl lg:w-full overflow-hidden overflow-y-auto overflow-x-auto py-5">
+        <div className="max-h-96 md:max-w-2xl lg:w-full w-full overflow-hidden overflow-y-auto overflow-x-auto py-5">
           {showComments ? (
             comments
               .slice()
