@@ -30,6 +30,7 @@ export default function CommentComponent({ comment }) {
   const [showMenuComment, setShowMenuComment] = useState(false);
   const [showConfirmDeletion, setShowConfirmDeletion] = useState(false);
   const [showModalEdit, setShowModalEdit] = useState(false);
+  const [itsMyComment, setItsMyComment] = useState(false);
 
   const [liked, setLiked] = useState(
     verifyIfLike({ item: comment, session, type: "comment" })
@@ -106,6 +107,7 @@ export default function CommentComponent({ comment }) {
 
   useEffect(() => {
     setShowIconMenuComment(verifyIsMyComment({ comment, session }));
+    setItsMyComment(verifyIsMyComment({ comment, session }))
   }, [session]);
 
   return (
@@ -122,7 +124,7 @@ export default function CommentComponent({ comment }) {
         comment={comment}
       />
 
-      <section className="md:max-w-2xl lg:w-full grid sm:grid-cols-4 grid-cols-1 sm:gap-0 gap-5 odd:bg-zinc-100 rounded-md px-3 py-7">
+      <section className={`grid sm:grid-cols-4 grid-cols-1 sm:gap-0 gap-5 odd:bg-zinc-100 even:border rounded-md px-3 py-7`}>
         <div className="flex sm:col-span-3 gap-3">
           <div className="relative">
             {showIconMenuComment && (
@@ -165,7 +167,7 @@ export default function CommentComponent({ comment }) {
             <span className="text-gray-500 sm:text-base text-xs sm:font-normal font-bold">
               {comment?.user.name}
             </span>
-            <p className="pl-4 out">{comment?.content}</p>
+            <p className="sm:pl-4 pl-2 sm:text-base text-xs">{comment?.content}</p>
           </div>
         </div>
 

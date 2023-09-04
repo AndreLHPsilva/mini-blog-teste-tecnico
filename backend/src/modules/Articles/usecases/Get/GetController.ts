@@ -4,7 +4,7 @@ import { GetUseCase } from "./GetUseCase";
 
 class GetController {
   async handle(req: Request, res: Response) {
-    const { start, end } = req.query;
+    const { start = 0, end = 10 } = req.query;
 
     const getUseCase = container.resolve(GetUseCase);
     const response = await getUseCase.execute({

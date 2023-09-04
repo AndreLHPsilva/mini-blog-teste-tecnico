@@ -15,7 +15,7 @@ export default function Article({ article }) {
   const { Error } = useNotification();
   const router = useRouter();
 
-  const [liked, setLiked] = useState(verifyIfLike({item: article, session}));
+  const [liked, setLiked] = useState(verifyIfLike({ item: article, session }));
 
   async function handleLikeArticle() {
     if (!session) {
@@ -61,11 +61,11 @@ export default function Article({ article }) {
   }
 
   useEffect(() => {
-    setLiked(verifyIfLike({item: article, session}))
+    setLiked(verifyIfLike({ item: article, session }));
   }, []);
 
   useEffect(() => {
-    setLiked(verifyIfLike({item: article, session}))
+    setLiked(verifyIfLike({ item: article, session }));
   }, [session, article]);
 
   return (
@@ -90,7 +90,10 @@ export default function Article({ article }) {
                 : `${article?.likes_total} curtidas`}
             </span>
           </div>
-          <div className="flex items-center gap-2">
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => router.push(`/artigo/${article.id}`)}
+          >
             <Icon icon="mdi:comments-text-outline" color="gray" />
             <span>
               {article?.comments_total <= 1

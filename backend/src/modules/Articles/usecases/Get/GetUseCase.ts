@@ -26,7 +26,7 @@ class GetUseCase {
     private articlesRepository: IArticlesRepository
   ) {}
 
-  async execute({ end = 10, start = 0 }: IGetDTO): Promise<IResponseDTO> {
+  async execute({ end, start }: IGetDTO): Promise<IResponseDTO> {
     const articles = await this.articlesRepository.get({ end, start });
 
     const articles_ids: string[] = articles.map(
@@ -40,7 +40,7 @@ class GetUseCase {
 
     const likesByArticleId: Map<string, ILikesArticles[]> = new Map<
       string,
-      IComments[]
+      ILikesArticles[]
     >();
 
     await Promise.all(

@@ -36,7 +36,7 @@ export default function ModalDeletionComment({ comment, onClose, showModal }) {
         <div className="flex flex-col gap-4">
           <p className="text-sm font-semibold flex flex-col gap-5 text-gray-500">
             Tem certeza que deseja prosseguir ?
-            <span className="text-xs border rounded p-1 text-gray-900 font-bold">
+            <span className="text-xs border rounded p-2 text-gray-900 font-bold max-h-20 overflow-hidden overflow-y-auto">
               {comment?.content}
             </span>
             <span className="text-red-500 text-xs">
