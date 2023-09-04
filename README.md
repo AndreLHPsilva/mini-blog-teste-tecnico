@@ -37,7 +37,7 @@ Execute os seguintes comandos para configurar o backend.
 
 ### Versão do NODE   
     v16.9.1
-### Versão do NODE   
+### Versão do NPM   
     v7.21.1
     
 ### Depêndencias do Frontend
