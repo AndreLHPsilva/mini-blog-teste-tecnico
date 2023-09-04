@@ -19,7 +19,7 @@ model User {
   updated_at DateTime @updatedAt()
 
   likes         LikeArticle[]
-  comments      Comments[]
+  comments      Comment[]
   LikesComments LikeComment[]
 
   @@map("users")
@@ -41,7 +41,7 @@ model LikeComment {
   user_id    String
   user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
   comment_id String
-  comment    Comments @relation(fields: [comment_id], references: [id], onDelete: Cascade)
+  comment    Comment @relation(fields: [comment_id], references: [id], onDelete: Cascade)
   article_id String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt()
@@ -49,7 +49,7 @@ model LikeComment {
   @@map("likes_comments")
 }
 
-model Comments {
+model Comment {
   id            String          @id @default(uuid())
   user_id       String
   user          User            @relation(fields: [user_id], references: [id], onDelete: Cascade)
