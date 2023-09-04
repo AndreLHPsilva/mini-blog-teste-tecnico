@@ -20,7 +20,7 @@ model User {
 
   likes         LikeArticle[]
   comments      Comments[]
-  LikesComments LikesComments[]
+  LikesComments LikeComment[]
 
   @@map("users")
 }
@@ -36,7 +36,7 @@ model LikeArticle {
   @@map("likes_articles")
 }
 
-model LikesComments {
+model LikeComment {
   id         String   @id @default(uuid())
   user_id    String
   user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
@@ -57,7 +57,7 @@ model Comments {
   content       String          @db.LongText
   created_at    DateTime        @default(now())
   updated_at    DateTime        @updatedAt()
-  LikesComments LikesComments[]
+  LikesComments LikeComment[]
 
   @@map("comments")
 }
