@@ -34,6 +34,9 @@ Execute os seguintes comandos para configurar o backend.
       -  npm install
     Inicie o servidor de desenvolvimento do frontend:
       - npm run dev
+### Diagrama de Entidade-Relacionamento
+![diagrama](https://github.com/AndreLHPsilva/mini-blog-teste-tecnico/assets/112219645/8f177ecd-4c27-416e-8546-9972ab550d6c)
+
 
 ### Detalhes dos Requisitos para avaliação
 - A aplicação deverá ser desenvolvida em Next.js.
