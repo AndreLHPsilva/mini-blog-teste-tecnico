@@ -54,7 +54,7 @@ model Comments {
   user_id       String
   user          User            @relation(fields: [user_id], references: [id], onDelete: Cascade)
   article_id    String
-  content       String
+  content       String          @db.LongText
   created_at    DateTime        @default(now())
   updated_at    DateTime        @updatedAt()
   LikesComments LikesComments[]
