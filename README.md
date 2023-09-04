@@ -52,7 +52,7 @@ Execute os seguintes comandos para configurar o backend.
     "styled-jsx": "^3.4.7",
     "tailwindcss": "3.3.3"
 ### Depêndencias do Backend
-  -  Desenvolvimento: 
+    Desenvolvimento: 
       "@mermaid-js/mermaid-cli": "^10.4.0",
       "@types/axios": "^0.14.0",
       "@types/bcrypt": "^5.0.0",
@@ -66,7 +66,7 @@ Execute os seguintes comandos para configurar o backend.
       "tsconfig-paths": "^4.2.0",
       "typescript": "^5.2.2"
      
-  -  Produção
+    Produção
       "@prisma/client": "^5.2.0",
       "axios": "^1.5.0",
       "bcrypt": "^5.1.1",
