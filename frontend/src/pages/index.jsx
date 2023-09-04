@@ -74,15 +74,13 @@ export async function getServerSideProps(ctx) {
   try {
     const [articlesPaginate, totalArticles] = await Promise.all([
       api.get("/articles?start=0&end=10"),
-      axios.get("https://news-api.lublot.dev/api/posts", {
-        headers: { "Content-Type": "application/json" },
-      }),
+      api.get("/articles/count"),
     ]);
 
     return {
       props: {
         articlesData: articlesPaginate.data.data.articles,
-        totalArticles: totalArticles.data.length,
+        totalArticles: totalArticles.data.data.number_articles,
       },
     };
   } catch (error) {

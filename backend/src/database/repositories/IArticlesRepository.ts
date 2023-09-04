@@ -7,5 +7,5 @@ export interface IGetArticlesDTO {
 
 export interface IArticlesRepository {
   find(article_id: string): Promise<IArticles | null>;
-  get(data: IGetArticlesDTO): Promise<IArticles[]>;
+  get(data?: IGetArticlesDTO): Promise<IArticles[]>;
 }

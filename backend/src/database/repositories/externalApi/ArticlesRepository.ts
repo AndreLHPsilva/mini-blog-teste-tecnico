@@ -16,11 +16,16 @@ class ArticlesRepository implements IArticlesRepository {
       return null;
     }
   }
-  async get({ end, start }: IGetArticlesDTO): Promise<IArticles[]> {
+  async get(data?: IGetArticlesDTO): Promise<IArticles[]> {
     try {
-      const articles: AxiosResponse = await axios.get(
-        `${this.base_url}/posts?_start=${start}&_end=${end}`
-      );
+      let articles: AxiosResponse;
+      if (data) {
+        articles = await axios.get(
+          `${this.base_url}/posts?_start=${data.start}&_end=${data.end}`
+        );
+      } else {
+        articles = await axios.get(`${this.base_url}/posts`);
+      }
 
       return articles?.data;
     } catch (error) {

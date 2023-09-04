@@ -5,16 +5,22 @@ import { FindController } from "@modules/Articles/usecases/Find/FindController";
 import { LikeArticleController } from "@modules/Articles/usecases/LikeArticle/LikeArticleController";
 import { DislikeArticleController } from "@modules/Articles/usecases/DislikeArticle/DislikeArticleController";
 import { AuthMiddleware } from "@middlewares/AuthMiddleware";
+import { CountController } from "@modules/Articles/usecases/Count/CountController";
 
 export const articlesRoutes = express.Router();
 const authMiddleware = new AuthMiddleware();
 
 const getController = new GetController();
 const findController = new FindController();
+const countController = new CountController();
 const likeArticleController = new LikeArticleController();
 const dislikeArticleController = new DislikeArticleController();
 
 articlesRoutes.use(commentRoutes);
+
+articlesRoutes.get(`/count`, async (req, res) => {
+  return await countController.handle(req, res);
+});
 
 articlesRoutes.get(`/:articleId`, async (req, res) => {
   return await findController.handle(req, res);
