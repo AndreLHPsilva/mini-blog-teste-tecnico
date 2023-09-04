@@ -34,7 +34,12 @@ Execute os seguintes comandos para configurar o backend.
       -  npm install --force
     Inicie o servidor de desenvolvimento do frontend:
       - npm run dev
-      
+
+### Versão do NODE   
+    v16.9.1
+### Versão do NODE   
+    v7.21.1
+    
 ### Depêndencias do Frontend
     "@headlessui/react": "^1.7.17",
     "autoprefixer": "10.4.15",
