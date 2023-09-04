@@ -8,7 +8,7 @@ import {
 } from "../ILikesArticlesRepository";
 
 class LikesArticlesPrismaRepository implements ILikesArticlesRepository {
-  constructor(private repository = prisma.likesArticles) {}
+  constructor(private repository = prisma.likeArticle) {}
 
   async dislike(likes_articles_id: string): Promise<void> {
     await this.repository.delete({ where: { id: likes_articles_id } });

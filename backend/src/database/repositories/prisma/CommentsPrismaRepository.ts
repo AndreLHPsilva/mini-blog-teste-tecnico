@@ -7,7 +7,7 @@ import {
 import { IComments } from "@models/Comments";
 
 class CommentsPrismaRepository implements ICommentsRepository {
-  constructor(private repository = prisma.comments) {}
+  constructor(private repository = prisma.comment) {}
 
   async update({ comment_id, content }: IUpdateCommentDTO): Promise<IComments> {
     const commentUpdated = await this.repository.update({

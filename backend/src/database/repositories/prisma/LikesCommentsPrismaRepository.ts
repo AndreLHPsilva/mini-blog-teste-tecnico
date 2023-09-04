@@ -9,7 +9,7 @@ import {
 import { ILikesComments } from "@models/LikesComments";
 
 class LikesCommentsPrismaRepository implements ILikesCommentsRepository {
-  constructor(private repository = prisma.likesComments) {}
+  constructor(private repository = prisma.likeComment) {}
 
   async findById(like_comment_id: string): Promise<ILikesComments | null> {
     const likeComment = await this.repository.findFirst({
