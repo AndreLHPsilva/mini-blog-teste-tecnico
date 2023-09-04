@@ -4,13 +4,29 @@ import { Icon } from "@iconify/react";
 import { useForm } from "react-hook-form";
 import FormCreateComment from "./FormCreateComment";
 import { verifyIfHasComments } from "@/utils/verifyIfHasComments";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function CommentsComponent({ comments, articleId }) {
   const [showComments, setShowComments] = useState(
     verifyIfHasComments(comments)
   );
 
+  const router = useRouter();
+
+  const { data: session } = useSession();
+
+
   const [showFormCreateComment, setShowFormCreateComment] = useState(false);
+
+  function handleShowModalCreateComment(){
+    if(!session){
+      router.push("/entrar");
+      return
+    }
+
+    setShowFormCreateComment(!showFormCreateComment)
+  }
 
   return (
     <section className="container mx-auto w-full xl:px-14 px-7 flex flex-col gap-10 pt-5">
@@ -19,14 +35,14 @@ export default function CommentsComponent({ comments, articleId }) {
         <Icon
           icon="jam:write-f"
           className="cursor-pointer transition-all duration-300 hover:scale-95"
-          onClick={() => setShowFormCreateComment(!showFormCreateComment)}
+          onClick={handleShowModalCreateComment}
         />
       </h1>
 
       {showFormCreateComment && <FormCreateComment articleId={articleId} />}
 
       <div className="divide-y w-full flex flex-col justify-center items-center">
-        <div className="max-h-96 overflow-hidden overflow-y-auto py-5">
+        <div className="max-h-96 md:max-w-2xl lg:w-full overflow-hidden overflow-y-auto overflow-x-auto py-5">
           {showComments ? (
             comments
               .slice()

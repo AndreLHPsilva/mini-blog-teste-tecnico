@@ -50,10 +50,9 @@ export default function Home({ articlesData, totalArticles }) {
             scrollThreshold={0.8}
             endMessage={
               <div className="my-10 flex w-full items-center justify-center">
-                <h1>Acabou</h1>
+                <h1>Não há mais artigos</h1>
               </div>
             }
-            // loader={<LoadingTableComponent />}
             loader={<span>Carregando...</span>}
             className="divide-y-2"
           >

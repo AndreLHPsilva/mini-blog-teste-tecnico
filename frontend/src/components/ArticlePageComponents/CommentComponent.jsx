@@ -122,25 +122,25 @@ export default function CommentComponent({ comment }) {
         comment={comment}
       />
 
-      <section className="w-768px grid grid-cols-4 odd:bg-zinc-100 rounded-md px-3 py-7">
-        <div className="flex flex-col col-span-3">
+      <section className="md:max-w-2xl lg:w-full grid sm:grid-cols-4 grid-cols-1 sm:gap-0 gap-5 odd:bg-zinc-100 rounded-md px-3 py-7">
+        <div className="flex flex-col sm:col-span-3">
           <span className="text-gray-500 sm:text-base text-xs sm:font-normal font-bold">
             {comment?.user.name}
           </span>
           <p className="pl-4 out">{comment?.content}</p>
         </div>
 
-        <div className="flex justify-end">
-          <div className="flex flex-col justify-center gap-3 col-span-1">
-            <span className="flex items-center gap-2 font-bold text-gray-500 sm:text-base text-xs">
+        <div className="flex sm:justify-end">
+          <div className="flex sm:flex-col sm:justify-center flex-row-reverse sm:gap-3 gap-2 sm:col-span-1">
+            <span className="flex items-center sm:gap-2 font-bold text-gray-500 sm:text-base text-xs">
               <div className="flex items-center gap-2">
-                <div className="flex items-center gap-2 text-gray-400 sm:text-sm text-xs">
+                <div className="flex items-center sm:gap-2 text-gray-400 sm:text-sm text-xs">
                   <Icon
                     icon="streamline:interface-calendar-date-month-thirty-thirty-calendar-date-week-day-month"
                     color="#71717a"
                   />
                 </div>
-                <span className="sm:text-base text-xs sm:font-normal font-bold">
+                <span className="sm:text-base text-[10px] sm:font-normal font-bold">
                   {publishedDate}
                 </span>
               </div>
@@ -188,7 +188,7 @@ export default function CommentComponent({ comment }) {
                 initialLiked={liked}
               />
 
-              <span>
+              <span className="sm:text-base text-xs">
                 {comment?.likes_total <= 1
                   ? `${comment?.likes_total} curtida`
                   : `${comment?.likes_total} curtidas`}

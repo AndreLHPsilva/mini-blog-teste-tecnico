@@ -69,8 +69,8 @@ export default function Article({ article }) {
   }, [session, article]);
 
   return (
-    <div className="md:max-w-4xl max-w-280px p-5 flex flex-col gap-3 mt-5 first:mt-0">
-      <div className="md:w-768px w-280px">
+    <div className="md:max-w-2xl sm:max-w-md max-w-280px p-5 flex flex-col gap-3 mt-5 first:mt-0">
+      <div className="md:w-640px sm:w-96 w-280px">
         <img
           src={article.coverImage}
           alt="Imagem do artigo"
@@ -100,7 +100,7 @@ export default function Article({ article }) {
           </div>
         </div>
       </div>
-      <div className="md:max-w-3xl max-w-240px flex flex-col gap-2">
+      <div className="md:w-640px sm:w-96 w-280px flex flex-col gap-2">
         <h3 className="font-bold sm:text-base text-sm">{article.title}</h3>
         <p className="line-clamp-3 text-gray-600 sm:text-sm text-xs">
           {article.content}
@@ -112,7 +112,7 @@ export default function Article({ article }) {
             article.tags.map((tag, index) => <Tag key={index} tag={tag} />)}
         </div>
       </div>
-      <div>
+      <div className="self-start">
         <Link
           href={`/artigo/${article.id}`}
           className="underline text-blue-500 font-semibold transition-all duration-300 hover:opacity-80 sm:text-base text-sm"
